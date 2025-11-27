@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Music - ABYSSBREED RECORDS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Metal+Mania&display=swap');
+
+    :root {
+      --blood: #ff0000;
+      --slime: #4e0082;
+      --bg: #0d0d0d;
+      --dark: #111;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: #000 url('https://files.catbox.moe/35gy20.jfif') center/cover no-repeat fixed;
+      color: #eee;
+      font-family: 'Metal Mania', cursive;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    header {
+      text-align: center;
+      padding: 4vh 0 2vh;
+    }
+
+    .logo {
+      font-family: 'Nosifer', cursive;
+      font-size: clamp(3rem, 12vw, 9rem);
+      color: var(--slime);
+      text-shadow: 
+        0 0 20px var(--slime),
+        0 0 30px var(--blood),
+        3px 3px 0 var(--blood),
+        6px 6px 0 #000;
+      letter-spacing: 8px;
+      margin-bottom: 20px;
+    }
+
+    /* Red box Back to Home button */
+    .back-to-home {
+      display: inline-block;
+      background-color: #ff0000;       /* Red box */
+      color: #7f01ce;                     /* White text */
+      font-family: 'Creepster', cursive;
+      font-size: 2rem;
+      text-decoration: none;           /* Remove underline */
+      padding: 12px 30px;              /* Box padding */
+      border-radius: 8px;              /* Rounded corners */
+      box-shadow: 0 0 10px #ff0000;   /* Subtle red glow */
+      text-align: center;
+      margin: 0 auto 40px;             /* Center & spacing below logo */
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+
+    .back-to-home:hover {
+      background-color: #7a00ff;       /* Purple hover */
+      color: #ff0000;                  /* Red text on hover */
+      box-shadow: 0 0 15px #ff0000;   /* Stronger glow */
+    }
+
+    
+
+    .playlist-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .playlist-container iframe {
+      border-radius: 12px;
+      width: 700px;
+      height: 352px;
+      border: none;
+      box-shadow: 0 0 20px var(--blood);
+    }
+
+    .playlist-container h2 {
+      font-family: 'Creepster', cursive;
+      color: #7a00ff;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 15px var(--blood), 0 0 10px #000;
+      animation: pulseGlow 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseGlow {
+      0%,100% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; }
+      50% { text-shadow: 0 0 15px #ff0000, 0 0 25px #ff0000; }
+    }
+
+    @media (max-width: 768px) {
+      .playlist-container iframe {
+        width: 100%;
+        max-width: 100%;
+      }
+      .logo {
+        font-size: clamp(2rem, 8vw, 5rem);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">ABYSSBREED <span>RECORDS</span></div>
+    <a href="index.html" class="back-to-home">Back to Home</a>
+  </header>
+
+  <main>
+    <div class="playlist-container">
+      <h2>Playlists We Created</h2>
+
+      <iframe src="https://open.spotify.com/embed/playlist/5MHOaGpruJwFwOPbou34Wx?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+      <iframe src="https://open.spotify.com/embed/playlist/2VN2Xl4IhQq3OYx6fhAYTr?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+      <iframe src="https://open.spotify.com/embed/playlist/2ZKyKb05pHUkHurenrjsUf?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+      <iframe src="https://open.spotify.com/embed/playlist/5nVXzzETJdrD44Fs73Xu1v?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ABYSSBREED RECORDS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Metal+Mania&display=swap');
+
+    :root {
+      --blood: #ff0000;
+      --slime: #4e0082;
+      --bg: #0d0d0d;
+      --dark: #111;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: #000 url('https://files.catbox.moe/35gy20.jfif') center/cover no-repeat fixed;
+      color: #eee;
+      font-family: 'Metal Mania', cursive;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, transparent 30%, #000 80%);
+      pointer-events: none;
+      horror: 1;
+    }
+
+    header {
+      text-align: center;
+      padding: 4vh 0 2vh;
+      position: relative;
+    }
+    .logo {
+      font-family: 'Nosifer', cursive;
+      font-size: clamp(3rem, 12vw, 9rem);
+      color: var(--slime);
+      text-shadow: 
+        0 0 20px var(--slime),
+        0 0 40px #000,
+        3px 3px 0 var(--blood),
+        6px 6px 0 #000;
+      letter-spacing: 8px;
+      animation: drip 4s infinite;
+    }
+    .logo span {
+      color: var(--blood);
+      animation: drip 3s infinite alternate-reverse;
+    }
+
+    @keyframes drip {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(15px); }
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 30px;
+    }
+
+    nav {
+      background: rgba(0,0,0,0.8);
+      border: 2px solid var(--blood);
+      border-radius: 10px;
+      padding: 20px;
+      position: sticky;
+      top: 20px;
+      height: fit-content;
+    }
+    nav ul {
+      list-style: none;
+    }
+    nav a {
+      color: var(--slime);
+      text-decoration: none;
+      font-size: 1.6rem;
+      display: block;
+      padding: 15px;
+      border-bottom: 1px dashed var(--blood);
+      transition: all 0.3s;
+    }
+    nav a:hover {
+      color: var(--blood);
+      text-shadow: 0 0 15px var(--blood);
+      transform: translateX(10px);
+    }
+
+    main {
+      background: rgba(0,0,0,0.85);
+      border: 3px double var(--blood);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+    }
+
+    .player {
+      background: #111;
+      border: 2px solid var(--slime);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .album-art {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(95, 0, 142, 0.6);
+      margin-bottom: 20px;
+    }
+    .track-title {
+      font-size: 2rem;
+      color: var(--slime);
+      margin: 15px 0;
+    }
+    .progress {
+      background: #222;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    .progress-bar {
+      width: 37%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--slime), var(--blood));
+      animation: playing 323s linear infinite;
+    }
+    @keyframes playing {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+
+    .controls {
+      font-size: 3rem;
+      color: var(--slime);
+    }
+    .controls i:hover { color: var(--blood); }
+
+    .subscribe {
+      background: linear-gradient(45deg, #111, #200);
+      border: 3px solid var(--blood);
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      margin: 30px 0;
+      box-shadow: 0 0 40px rgba(255,0,0,0.4);
+    }
+    .price {
+      font-family: 'Creepster', cursive;
+      font-size: 4rem;
+      color: var(--blood);
+      text-shadow: 0 0 20px #000;
+    }
+    .gpay-btn {
+      background: var(--blood);
+      color: #fff;
+      padding: 15px 40px;
+      font-size: 2rem;
+      border-radius: 50px;
+      margin-top: 20px;
+      display: inline-block;
+      text-decoration: none;
+      box-shadow: 0 0 20px var(--blood);
+    }
+
+    .comment {
+      background: #111;
+      padding: 20px;
+      border-left: 5px solid var(--slime);
+      font-style: italic;
+      margin-top: 30px;
+    }
+
+    
+    @keyframes bleed {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 300px; }
+    }
+
+    @media (max-width: 900px) {
+      .container { grid-template-columns: 1fr; }
+      nav { position: static; }
+    }
+    @media (max-width: 600px) {
+      .logo {
+        font-size: clamp(2.2rem, 10vw, 5rem);
+        letter-spacing: 3px;
+        text-shadow:
+        0 0 10px var(--slime),
+        0 0 20px #000,
+        2px 2px 0 var(--blood),
+        4px 4px 0 #000;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="blood-drips"></div>
+
+<header>
+  <h1 class="logo"> <span>ABYSSBREED</span> RECORDS</h1>
+</header>
+
+<div class="container">
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+    </nav>
+
+  <main>
+  <iframe
+  data-testid="embed-iframe"
+  style="border-radius: 12px"
+  src="https://open.spotify.com/embed/playlist/4IkDI1PgFNUtVUr5JBRroN?utm_source=generator&theme=0"
+  width="100%"
+  height="352"
+  frameBorder="0"
+  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+  loading="lazy">
+</iframe>
+
+    <div class="subscribe">
+      <h2>SUBSCRIBE TO THE ABYSS</h2>
+      <a href="#" class="paypal-btn">Gpay → Subscribe for $10/month</a>
+      <p style="margin-top:20px; font-size:1.2rem;">
+        Full access to our cursed music library • Exclusive releases • Digital blood rituals
+      </p>
+    </div>
+
+    <div class="comment">
+      <strong>Now listening to:</strong> ETERNAL ABYSS UNLEASHED! <br/><br/>
+      <em>"This is pure darkness!"</em><br/>
+      Subscribe now for full access to our cursed music library!
+    </div>
+  </main>
+</div>
+
+</body>
+</html>
